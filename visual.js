@@ -1,0 +1,2 @@
+'use strict';
+(()=>{const scene=document.getElementById('mission'),button=document.getElementById('motion-toggle');let reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;function apply(){scene.classList.toggle('reduced-motion',reduced);button.setAttribute('aria-pressed',String(reduced));button.textContent=reduced?'Ativar movimento':'Reduzir movimento';}button.hidden=false;button.onclick=()=>{reduced=!reduced;apply();};document.addEventListener('visibilitychange',()=>scene.classList.toggle('page-hidden',document.hidden));apply();})();
